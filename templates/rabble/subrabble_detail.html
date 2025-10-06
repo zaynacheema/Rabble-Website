@@ -1,0 +1,31 @@
+{% extends "rabble/base.html" %}
+
+{% block title %}!{{ subrabble.id }}{% endblock %}
+
+{% block content %}
+  <div class="container" style="padding: 1.5rem">
+    <h2>!{{ subrabble.id }} — {{ subrabble.name }}</h2>
+    <p>{{ subrabble.description }}</p>
+
+    <a href="{% url 'post-create' subrabble.id %}" class="btn" style="margin: 1rem 0; display: inline-block;">
+      + New Post
+    </a>
+    {% if posts %}
+      {% for post in posts %}
+        <div style="border-bottom: 1px solid #ccc; padding: 1rem 0;">
+          <a href="{% url 'post-detail' subrabble.id post.id %}">
+            <strong>{{ post.title }}</strong>
+          </a>
+          <p>{{ post.body }}</p>
+
+          <p style="font-size: 0.9rem; color: #555;">
+            By {{ post.author.username }}<br>
+            👍 {{ post.likes.count }} 💬 {{ post.num_comments }}
+          </p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No posts yet. Be the first to start the discussion!</p>
+    {% endif %}
+  </div>
+{% endblock %}

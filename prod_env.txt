@@ -1,0 +1,2 @@
+SECRET_KEY=0s#k7fdp*=&#uf@(8n@sgp(^icsr)8jxj#+dlnb2p3uhhi!ul
+DATABASE_URL=postgres://rabble:rabble7007007@//cloudsql/rabble-zaynacheema:us-central1:rabble/rabble

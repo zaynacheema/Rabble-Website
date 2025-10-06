@@ -1,0 +1,36 @@
+{% extends "rabble/base.html" %}
+
+{% block content %}
+  <div class="container" style="padding: 1.5rem">
+    <h2>
+      {% if user.is_authenticated %}
+        Welcome {{ user.username }}!
+      {% else %}
+        Welcome to Rabble!
+      {% endif %}
+    </h2>
+
+    {% if user.is_authenticated %}
+      {% if subrabbles %}
+        <div class="subrabble-list">
+          {% for sr in subrabbles %}
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #ccc;">
+              <div>
+                <strong>!{{ sr.id }} — {{ sr.name }}</strong><br>
+                <span>{{ sr.description }}</span>
+              </div>
+              <div>
+                <a href="{% url 'subrabble-detail' sr.id %}" class="btn" style="padding: 0.4rem 1rem; background: #eee; border-radius: 4px;">View</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No subRabbles yet. Create one to get started!</p>
+      {% endif %}
+    {% else %}
+      <p>Please log in to view Rabble communities.</p>
+      <a href="{% url 'login' %}" class="btn" style="padding: 0.4rem 1rem; background: #eee; border-radius: 4px;">Log in</a>
+    {% endif %}
+  </div>
+{% endblock content %}

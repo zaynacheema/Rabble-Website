@@ -1,0 +1,169 @@
+[
+  {
+    "model": "rabble.user",
+    "pk": 1,
+    "fields": {
+      "username": "sam",
+      "password": "pbkdf2_sha256$870000$M4dzXUhxk2n4xXeJghicPM$i2A0ngnoTPM2FtFvA8uxmMWnfiot9SIY+9/RLyq0qG4=",
+      "email": "sam@example.com",
+      "bio": "CS enthusiast.",
+      "interests": "systems, security"
+    }
+  },
+  {
+    "model": "rabble.user",
+    "pk": 2,
+    "fields": {
+      "username": "alex",
+      "password": "pbkdf2_sha256$870000$M4dzXUhxk2n4xXeJghicPM$i2A0ngnoTPM2FtFvA8uxmMWnfiot9SIY+9/RLyq0qG4=",
+      "email": "alex@example.com"
+    }
+  },
+  {
+    "model": "rabble.user",
+    "pk": 3,
+    "fields": {
+      "username": "chris",
+      "password": "pbkdf2_sha256$870000$M4dzXUhxk2n4xXeJghicPM$i2A0ngnoTPM2FtFvA8uxmMWnfiot9SIY+9/RLyq0qG4=",
+      "email": "chris@example.com"
+    }
+  },
+  {
+    "model": "rabble.user",
+    "pk": 4,
+    "fields": {
+      "username": "morgan",
+      "password": "pbkdf2_sha256$870000$M4dzXUhxk2n4xXeJghicPM$i2A0ngnoTPM2FtFvA8uxmMWnfiot9SIY+9/RLyq0qG4=",
+      "email": "morgan@example.com"
+    }
+  },
+  {
+    "model": "rabble.user",
+    "pk": 5,
+    "fields": {
+      "username": "drew",
+      "password": "pbkdf2_sha256$870000$M4dzXUhxk2n4xXeJghicPM$i2A0ngnoTPM2FtFvA8uxmMWnfiot9SIY+9/RLyq0qG4=",
+      "email": "drew@example.com"
+    }
+  },
+
+  {
+    "model": "rabble.community",
+    "pk": 1,
+    "fields": {}
+  },
+  {
+    "model": "rabble.communitymembership",
+    "pk": 1,
+    "fields": {
+      "community": 1,
+      "user": 1,
+      "role": "Owner"
+    }
+  },
+
+  {
+    "model": "rabble.subrabble",
+    "pk": "cs-courses",
+    "fields": {
+      "name": "CS Courses",
+      "description": "Discuss CS classes",
+      "anonymous_post": false,
+      "visibility": "public",
+      "num_posts": 3,
+      "community": 1
+    }
+  },
+  {
+    "model": "rabble.subrabble",
+    "pk": "python",
+    "fields": {
+      "name": "Python",
+      "description": "Talk Python",
+      "anonymous_post": false,
+      "visibility": "public",
+      "num_posts": 0,
+      "community": 1
+    }
+  },
+  {
+    "model": "rabble.subrabble",
+    "pk": "web-dev",
+    "fields": {
+      "name": "Web Dev",
+      "description": "Web development discussions",
+      "anonymous_post": false,
+      "visibility": "public",
+      "num_posts": 0,
+      "community": 1
+    }
+  },
+
+  {
+    "model": "rabble.post",
+    "pk": 1,
+    "fields": {
+      "title": "Welcome to CS Courses!",
+      "body": "Introduce yourselves!",
+      "likes": [],
+      "num_comments": 3,
+      "author": 1,
+      "subrabble": "cs-courses"
+    }
+  },
+  {
+    "model": "rabble.post",
+    "pk": 2,
+    "fields": {
+      "title": "Best electives?",
+      "body": "What electives are fun?",
+      "likes": [1],
+      "num_comments": 0,
+      "author": 2,
+      "subrabble": "cs-courses"
+    }
+  },
+  {
+    "model": "rabble.post",
+    "pk": 3,
+    "fields": {
+      "title": "CMSC 22000 thoughts",
+      "body": "Nice class :)",
+      "likes": [2],
+      "num_comments": 0,
+      "author": 4,
+      "subrabble": "cs-courses"
+    }
+  },
+
+  {
+    "model": "rabble.comment",
+    "pk": 1,
+    "fields": {
+      "body": "I'm Alex and am taking CMSC 22000!",
+      "likes": 0,
+      "base": 1,
+      "author": 2
+    }
+  },
+  {
+    "model": "rabble.comment",
+    "pk": 2,
+    "fields": {
+      "body": "Hi, I'm Drew! I'm excited to be here.",
+      "likes": 1,
+      "base": 1,
+      "author": 5
+    }
+  },
+  {
+    "model": "rabble.comment",
+    "pk": 3,
+    "fields": {
+      "body": "I'm Morgan. Looking forward to chatting.",
+      "likes": 0,
+      "base": 1,
+      "author": 4
+    }
+  }
+]

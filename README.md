@@ -1,0 +1,1 @@
+This project was for CS220 and implements a reddit style website with posting feature, subthread creation, liking, commenting, secure login, and so on. Currently, the DEPLOY.md does not work because the google cloud subscription I was running is gone now, but this repo contains all the code I had for the website. 
